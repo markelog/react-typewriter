@@ -1,5 +1,4 @@
 import React from 'react';
-import update from 'immutability-helper';
 
 // Enclosing scope for local state variables.
 export var styleComponentSubstring = (() => {
@@ -21,7 +20,7 @@ export var styleComponentSubstring = (() => {
 
       if (_index >= _start && (!_end || _index < _end)) {
         cloneProps = {
-          style: update(style || {}, {$merge: _styles})
+          style: Object.assign(style || {}, {$merge: _styles})
         };
       }
       _index++;
