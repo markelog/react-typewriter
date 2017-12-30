@@ -23,8 +23,8 @@
     "type": "git",
     "url": "https://github.com/ianbjorndilling/react-typewriter.git"
   },
-  "dependencies": {
-    "react": "^0.14.7"
+  "peerDependencies": {
+    "react": "^16.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
@@ -41,5 +41,8 @@
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.10.0",
     "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "immutability-helper": "^2.6.2"
   }
 }

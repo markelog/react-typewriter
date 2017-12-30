@@ -1,4 +1,5 @@
 import React from 'react';
+import update from 'immutability-helper';
 
 // Enclosing scope for local state variables.
 export var styleComponentSubstring = (() => {
@@ -12,14 +13,15 @@ export var styleComponentSubstring = (() => {
   // the start/end with a styled span.
   function alterComponent(component) {
 
-    let {children, stamp, style} = component.props,
-        cloneProps;
+    let {children, style} = component.props;
+    let cloneProps;
+    let stamp = component.props['data-stamp'];
 
     if (stamp) {
 
       if (_index >= _start && (!_end || _index < _end)) {
         cloneProps = {
-          style: React.addons.update(style || {}, {$merge: _styles})
+          style: update(style || {}, {$merge: _styles})
         };
       }
       _index++;
@@ -134,7 +136,7 @@ export var componentTokenAt = (() => {
       if (typeof child !== 'string') {
 
         // treat Stamp components as a single token.
-        if (child.props.stamp) {
+        if (child.props['data-stamp']) {
           if (!_index) {
             token = child;
           } else {
