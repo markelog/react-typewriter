@@ -20,7 +20,7 @@ export var styleComponentSubstring = (() => {
 
       if (_index >= _start && (!_end || _index < _end)) {
         cloneProps = {
-          style: Object.assign(style || {}, {$merge: _styles})
+          style: Object.assign({}, style || {}, {$merge: _styles})
         };
       }
       _index++;
