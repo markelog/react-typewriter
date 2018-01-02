@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {styleComponentSubstring, componentTokenAt} from '../utils';
 
 /**
@@ -126,14 +128,14 @@ class TypeWriter extends React.Component {
 }
 
 TypeWriter.propTypes = {
-  fixed: React.PropTypes.bool,
-  delayMap: React.PropTypes.arrayOf(React.PropTypes.shape({
-    at: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number,
-      React.PropTypes.instanceOf(RegExp)
+  fixed: PropTypes.bool,
+  delayMap: PropTypes.arrayOf(PropTypes.shape({
+    at: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.instanceOf(RegExp)
     ]),
-    delay: React.PropTypes.number
+    delay: PropTypes.number
   })),
   typing(props, propName) {
     const prop = props[propName];
@@ -142,10 +144,10 @@ TypeWriter.propTypes = {
       return new Error('typing property must be an integer between 1 and -1');
     }
   },
-  maxDelay: React.PropTypes.number,
-  minDelay: React.PropTypes.number,
-  onTypingEnd: React.PropTypes.func,
-  onTyped: React.PropTypes.func
+  maxDelay: PropTypes.number,
+  minDelay: PropTypes.number,
+  onTypingEnd: PropTypes.func,
+  onTyped: PropTypes.func
 };
 
 TypeWriter.defaultProps = {

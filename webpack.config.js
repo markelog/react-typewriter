@@ -9,7 +9,13 @@ module.exports = {
       amd: 'react',
       commonjs: 'react',
       commonjs2: 'react'
-    }
+    },
+    'prop-types': {
+      root: 'prop-types',
+      amd: 'prop-types',
+      commonjs: 'prop-types',
+      commonjs2: 'prop-types'
+    },
   },
   output: {
     path: './build',
